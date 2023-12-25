@@ -1,3 +1,11 @@
+#########################
+Point of Sale Mini System
+#########################
+
+1. After download to local, set $config['base_url'] inside application/config/config.php
+2. create a database named 'pos' and import sql file 
+3. Use username/password : admin/admin to start test the system
+
 ###################
 What is CodeIgniter
 ###################
