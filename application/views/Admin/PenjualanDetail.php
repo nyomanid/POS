@@ -73,7 +73,7 @@
 												<td><?= $value->nama_barang." (".$value->kode_barang.")" ?></td>
 												<td><?= $value->qty ?></td>
 												<td>Rp.<?= number_format($value->harga) ?></td>
-												<td><?= $promo->promo ?></td>
+												<td><?= (isset($promo->promo) ? $promo->promo : "-") ?></td>
 												
 												<td>Rp.<?= number_format($value->discount) ?></td>
 												<td>Rp.<?= number_format($value->subtotal) ?></td>

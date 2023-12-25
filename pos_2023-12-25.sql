@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 11.2.2-MariaDB)
 # Database: pos
-# Generation Time: 2023-12-25 07:06:26 +0000
+# Generation Time: 2023-12-25 07:20:38 +0000
 # ************************************************************
 
 
@@ -89,8 +89,8 @@ LOCK TABLES `penjualan_header` WRITE;
 
 INSERT INTO `penjualan_header` (`no_transaksi`, `tgl_transaksi`, `customer`, `total_bayar`, `kode_promo`, `ppn`, `grand_total`)
 VALUES
-	('202312-014','2023-12-25 13:17:16','Firda',2455200,'promo-011',11,2725272),
-	('202312-015','2023-12-25 14:04:01','Darmaw',27000,'promo-001',11,29970);
+	('202312-001','2023-12-25 14:17:58','Darmawan',90000,'promo-001',11,99900),
+	('202312-002','2023-12-25 14:19:05','Yanti',10000,'',11,11100);
 
 /*!40000 ALTER TABLE `penjualan_header` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -117,9 +117,9 @@ LOCK TABLES `penjualan_header_detail` WRITE;
 
 INSERT INTO `penjualan_header_detail` (`id_detail`, `no_transaksi`, `kode_barang`, `qty`, `harga`, `discount`, `subtotal`)
 VALUES
-	(13,'202312-014',2,10,62000,0,558000),
-	(14,'202312-014',2,34,62000,0,1897200),
-	(15,'202312-015',2,3,10000,0,27000);
+	(16,'202312-001',1,12,5000,0,54000),
+	(17,'202312-001',2,4,10000,0,36000),
+	(18,'202312-002',1,2,5000,0,10000);
 
 /*!40000 ALTER TABLE `penjualan_header_detail` ENABLE KEYS */;
 UNLOCK TABLES;
