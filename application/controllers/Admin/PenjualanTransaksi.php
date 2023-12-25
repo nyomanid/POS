@@ -21,34 +21,6 @@ class PenjualanTransaksi extends CI_Controller
 		);
 		$this->load->view('Admin/PenjualanTransaksi', $data);
 	}
-	public function detail_transaksi($id, $member_wisatawan)
-	{
-		$data = array(
-			'detail' => $this->mTransaksi->detail_transaksi($id, $member_wisatawan)
-		);
-		$this->load->view('Admin/Layout/head');
-		$this->load->view('Admin/Layout/aside');
-		$this->load->view('Admin/transaksi/vdetailtransaksi', $data);
-		$this->load->view('Admin/Layout/footer');
-	}
-	public function konfirmasi($id)
-	{
-		$data = array(
-			'status_order' => '2'
-		);
-		$this->mTransaksi->update_status($id, $data);
-		$this->session->set_flashdata('success', 'Pesanan Berhasil Dikonfirmasi!');
-		redirect('Admin/cTransaksi');
-	}
-	public function konfirmasi_datang($id)
-	{
-		$data = array(
-			'status_order' => '3'
-		);
-		$this->mTransaksi->update_status($id, $data);
-		$this->session->set_flashdata('success', 'Pesanan Selesai!');
-		redirect('Admin/cTransaksi');
-	}
 
 	public function addtocart()
 	{
@@ -76,7 +48,7 @@ class PenjualanTransaksi extends CI_Controller
 			'options' => array('pos_customer' => $this->input->post('pos_customer'), 'pos_harga_barang' => $this->input->post('pos_harga_barang'), 'pos_promo' => $this->input->post('pos_promo'), 'pos_value_promo' => $this->input->post('pos_value_promo'), 'show_promo' => $show_promo, 'show_subtotal' => $show_subtotal)
 		);
 		$this->cart->insert($data);
-		$this->session->set_flashdata('success', 'Transaksi Penjualan Berhasil Ditambahkan ke Keranjang!');
+		$this->session->set_flashdata('response', ['success','Transaksi Penjualan Berhasil Ditambahkan ke Keranjang!']);
 		redirect('admin/penjualantransaksi', 'refresh');
 	}
 	public function deletecart($id)
@@ -136,9 +108,9 @@ class PenjualanTransaksi extends CI_Controller
 		$this->db->where('no_transaksi', $no_trx_final)->update('penjualan_header', $transaksi);
 
 		$this->cart->destroy();
-		$this->session->set_flashdata('success', 'Data Transaksi Penjualan Berhasil Disimpan!!!');
+		$this->session->set_flashdata('response', ['success','Data Transaksi Penjualan Berhasil Disimpan!!!']);
 		redirect('admin/penjualan', 'refresh');
 	}
 }
 
-/* End of file cTransaksi.php */
+/* End of file PenjualanTransaksi.php */
