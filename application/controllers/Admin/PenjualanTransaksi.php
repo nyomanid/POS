@@ -34,13 +34,6 @@ class PenjualanTransaksi extends CI_Controller
 		}
 
 		$data = array(
-			// 'pos_customer' => $this->input->post('pos_customer'),
-			// 'pos_barang' => $this->input->post('pos_barang'),
-			// 'pos_nama_barang' => $this->input->post('pos_nama_barang'),
-			// 'pos_harga_barang' => $this->input->post('pos_harga_barang'),
-			// 'pos_qty' => $this->input->post('pos_qty'),
-			// 'pos_promo' => $this->input->post('pos_promo')
-
 			'id'      => $this->input->post('pos_barang'),
 			'qty'     => $this->input->post('pos_qty'),
 			'price'   => $show_subtotal / $this->input->post('pos_qty'),
